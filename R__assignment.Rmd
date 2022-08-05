@@ -1,0 +1,34 @@
+---
+title: "R_assignments"
+author: "Ann"
+date: "8/5/2022"
+output: html_document
+---
+
+## R assignments   
+First question  
+Use both filter() and select() to create a subset of data frame that contains sepal length of value more than 5, sepal width and species  
+
+```
+iris_question1 <- iris%>%select(Sepal.Length, Sepal.Width, Species)%>%filter(Sepal.Length>5)   
+```   
+
+Second question  
+
+Use group_by(), summarize(), mean(), sd(), min(), max() to calculate the mean, standard deviation, get maximum value, minimum value of each Species’ Sepal.Width  
+
+```  
+iris_question2 <- iris %>%group_by(Species) %>%summarize(mean_width=mean(Sepal.Width), strdevt_width=sd(Sepal.Width), max(Sepal.Width), min(Sepal.Width))
+```  
+
+Third question  
+
+Use group_by(), mutate(), summarize(), mean(), sd(), min(), max() to calculate the mean, sd, find maximum and minimum of a new column of variable called SPlength where the Sepal.Length is divided by Petal.Length  
+
+```  
+iris_question3 <- iris %>%group_by(Species) %>%mutate(SPlength=Sepal.Length/Petal.Length) %>%summarise(mean_splength=mean(SPlength), strdevt_splength=sd(SPlength), max(SPlength), min(SPlength))
+```  
+## The End!!!  
+
+
+
