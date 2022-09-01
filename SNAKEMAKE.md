@@ -33,5 +33,13 @@ A snakemake workflow has four main components:
           ```  
  * Shell  
      * Define the command to be executed;
-       ```
-       
+       ```  
+       "fastqc {input} {output}"
+         ```  
+     * Snakemake is able to pick the input file and output file. The files do not have to be defined in the shell.  
+
+To run the snakemake file, one only needs to call ```snakemake``` . Snakemake will automotically run a ```Snakefile``` in the working directory. To visualize the process, the flag ```-np``` is attached.  
+
+### Wildcards  
+Wildcards are used to remove staticity of the workflow. The wildcard used is placed in parenthesis ```{}```. 
+
