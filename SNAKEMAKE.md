@@ -42,12 +42,17 @@ To run the snakemake file, one only needs to call ```snakemake``` . Snakemake wi
 
 ### Wildcards  
 Wildcards are used to remove staticity of the workflow. The wildcard used is placed in parenthesis ```{}```. 
-   ```rule fastqc:
-               input:
-                   "examples/{file}"
-               output:
-                   "fastqc/{file}"
-               shell:
-                   "fastqc {input} > {output}"
-          ```  
+ ```  
+ rule fastqc:
+    input:
+        "examples/{file}"
+    output:
+        "fatsqc/{file}"
+    shell:
+        "fastqc {input} > {output}"
+  ```  
+When running the workflow, only the output file is defined in the command i.e ; ```snakemake -np fastqc/primates.fa```  
+Snakemake is able to reason back from the required output.  
+
+### DAG  
 
