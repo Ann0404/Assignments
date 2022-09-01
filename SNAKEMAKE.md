@@ -26,3 +26,12 @@ A snakemake workflow has four main components:
      * More than one input file can be provided for analysis  
 
  * Output 
+     * Define the output file ;
+         ```  
+         output: 
+            "fastqc/primates.fa"
+          ```  
+ * Shell  
+     * Define the command to be executed;
+       ```
+       
