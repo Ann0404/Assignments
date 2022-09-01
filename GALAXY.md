@@ -18,9 +18,10 @@ The three main steps in analysis on galaxy are:
      The process of the task can be viewed in the history section. Once it completes successfully, the results can be downloaded from history. Galaxy also      provides varius options to visualize the output. The output of the first process can be used as the output for the next process. As a result, galaxy        enables creation of workflows.  
      
  ## Workflows  
-    Workflows in galaxy can be created in three ways:
+   Workflows in galaxy can be created in three ways:
        * The workflow can be extracted from history.
        * One can manually create a workflow.
        * The workflow can be imported.
    
-   * Extracting from history.
+   * Extracting from history.  
+     Once all the processes have been completed, the failed jobs are removed. 
