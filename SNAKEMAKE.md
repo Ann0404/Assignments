@@ -13,7 +13,7 @@ A snakemake workflow has four main components:
                output:
                   "path/to/outputfile"
                shell:
-                   "command to be executed {input} {output}"
+                   "command to be executed {input} > {output}"
           ```  
      * Naming the rule is important as it enables anyone using the script to understand what each step entails. The rule in this step is fastqc.   
   
@@ -34,7 +34,7 @@ A snakemake workflow has four main components:
  * Shell  
      * Define the command to be executed;
        ```  
-       "fastqc {input} {output}"
+       "fastqc {input} > {output}"
          ```  
      * Snakemake is able to pick the input file and output file. The files do not have to be defined in the shell.  
 
@@ -42,4 +42,12 @@ To run the snakemake file, one only needs to call ```snakemake``` . Snakemake wi
 
 ### Wildcards  
 Wildcards are used to remove staticity of the workflow. The wildcard used is placed in parenthesis ```{}```. 
+   ```rule fastqc:
+               input:
+                   "examples/{file}"
+               output:
+                   "fastqc/{file}"
+               shell:
+                   "fastqc {input} > {output}"
+          ```  
 
