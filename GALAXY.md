@@ -25,4 +25,10 @@ The three main steps in analysis on galaxy are:
        
    
    * Extracting from history.  
-     Once all the processes have been completed, the failed jobs are removed. 
+     Once all the processes have been completed, the failed jobs are removed. Once this is done, a workflow can be created from the history. Anew history can be created and the same workflow can be executed in this history as long as it has the right data set for analysis.  
+     
+   * Importing workflows. 
+     Workflows can be imported from the shared data in the galaxy platform . They can also be imported from the web by pasting the URL in the import          section.  
+     
+   * Manual creation of workflows.  
+     
