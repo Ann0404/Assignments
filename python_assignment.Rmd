@@ -1,0 +1,1272 @@
+---
+title: "Python_assignment"
+author: "Ann"
+date: "8/23/2022"
+output: html_document
+---
+
+# Qst 1  
+```
+qn=[]
+for i in range(2000,3200):
+    if i%7==0 and i%5!=0:
+        qn.append(str(i))
+print(','.join(qn))
+```  
+## Question 2  
+
+```  
+num=int(input("Enter a number:"))
+factorial=1
+
+if num<0:
+    print('There is no factorial for negative integers')
+    
+    if num==0:
+        print('The factorial is 1')
+        
+else:
+    for i in range(1,num+1):
+        factorial=factorial*i
+                
+    print('The factorial of',num, 'is', factorial)  
+```  
+```
+Enter a number: 8
+The factorial of 8 is 40320  
+```    
+## Question 3  
+```  
+n=int(input("Enter a number:"))
+num = dict()
+for i in range(1,n+1):
+    num[i]=i*i
+    
+print(num)  
+```  
+```  
+Enter a number: 8
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}  
+```  
+# Qstn 4 
+```  
+x=input()
+y=x.split(",")
+i=tuple(y)
+print(y)
+print(i)
+```   
+# Qstn 5
+```  
+class qst5(object):
+    def __init__(x):
+        x.s = ""
+
+    def getString(x):
+        x.s = input()
+    
+    def printString(x):
+        print(x.s.upper())
+
+classis = qst5()
+classis.getString()
+classis.printString()
+```  
+# Qst6
+```
+import math
+C=50
+H=30
+numbers = []
+a =input().split(',')
+for D in a:
+    numbers.append(str(int(round(math.sqrt(2*C*float(D)/H)))))
+print(",".join(numbers))
+```  
+# Qstn 7
+```  
+row_column = input()
+rowVScolumn = [int(x) for x in (row_column.split(','))]
+rowposition = rowVScolumn[0]
+columnposition = rowVScolumn[1]
+multi_list = [[0 for col in range(columnposition)] for row in range(rowposition)]
+
+for row in range (rowposition):
+    for col in range (columnposition):
+        multi_list[row][col] = row*col
+        
+print(multi_list)
+```  
+# Qstn 8
+```  
+string = [x for x in input().split(',')]
+string.sort()
+print(','.join(string))
+```  
+
+# Qst 9
+Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.
+```  
+# output should be the input string in upper case
+case = input()
+sensitive = case.upper()
+print(sensitive)
+```  
+# Qstn 10  
+``` 
+whitespace = [x for x in input().split(" ")]
+print(" ".join(set(sorted(whitespace))))
+```  
+# Qstn 11
+```  
+binary = []
+num = [x for x in input().split(',')]
+for a in num:
+    x = int(a, 2)
+    if not x%5:
+        binary.append(a)
+print(','.join(items))  
+```  
+# Qstn 12  
+```  
+numbers = []
+for x in range (1000, 3001):
+    a = [int(d) for d in str(x)]
+    odd = False
+    for y in range (0, len(a)):
+        if a[y] % 2 != 0:
+            odd = True
+    if (odd == False):
+        numbers.append(x)
+print (numbers)  
+```  
+# Qstn 13  
+```  
+sentence = input()
+digit=alpha=0
+for x in sentence:
+    if x.isalpha():
+        alpha = alpha+1
+    elif x.isdigit():
+        digit = digit+1
+    else:
+        pass
+print("letters" ,alpha)
+print("digits", digit)  
+```  
+# Qstn 14
+```  
+str = input()
+lower=upper=0
+for x in str:
+   if x.isupper():
+      upper=upper+1
+   elif x.islower():
+      lower=lower+1
+   else:
+      pass
+print("Upper:", upper)
+print("Lower:", lower)
+```  
+
+# Qst 15   
+Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a.  
+```  
+# calculate a+aa+aaa+aaaa
+a = input()
+#  specify that a is an interger despite it being a string
+str1 = int( "%s" % a )
+str2 = int( "%s%s" % (a,a) )
+str3 = int( "%s%s%s" % (a,a,a) )
+str4 = int( "%s%s%s%s" % (a,a,a,a) )
+print(str1+str2+str3+str4)
+``` 
+# Qstn 16
+Question:
+Use a list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers.
+Suppose the following input is supplied to the program:
+1,2,3,4,5,6,7,8,9
+Then, the output should be:
+1,3,5,7,9  
+
+```  
+odd = input()
+num = [x for x in odd.split(",") if int(x)%2!=0]
+print(",".join(num))
+```  
+# Qstn 17  
+Question:
+Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following:
+D 100
+W 200
+
+D means deposit while W means withdrawal.
+Suppose the following input is supplied to the program:
+D 300
+D 300
+W 200
+D 100
+Then, the output should be:
+500  
+```  
+account = 0
+while True:
+    x = input()
+    if not x:
+        break
+    transaction = x.split(" ")
+    #To get the type and amount 
+    value = transaction [0]
+    amount = int (transaction [1])
+    if value=="D":
+        account += amount
+    elif value=="W":
+        account -= amount
+    else:
+        pass
+    
+print("Net amount is:", account)
+``` 
+# Qstn 18
+Question:
+A website requires the users to input username and password to register. Write a program to check the validity of password input by users.
+Following are the criteria for checking the password:
+1. At least 1 letter between [a-z]
+2. At least 1 number between [0-9]
+1. At least 1 letter between [A-Z]
+3. At least 1 character from [$#@]
+4. Minimum length of transaction password: 6
+5. Maximum length of transaction password: 12
+Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma.
+Example
+If the following passwords are given as input to the program:
+ABd1234@1,a F1#,2w3E*,2We3345
+Then, the output of the program should be:
+ABd1234@1
+
+```  
+user_input = input()
+passwords = user_input.split(",")
+special_chars = ["$","#","@"]
+valid = []
+
+for x in passwords:
+    #check the length:
+    if(len(x) > 12 or len(x) < 6):
+        continue
+    else:
+        pass
+    
+    #check if it has numbers:
+    has_number = any(char.isdigit() for char in x)
+    if(not has_number):
+        continue
+        
+    #check if it has both upper and lower case:
+    if (x.isupper() or x.islower()): 
+        continue
+        
+    #check if it has any of the special character:
+    has_char = any(char in special_chars for char in x)
+    if(not has_char):
+        continue
+    else:
+        pass
+
+    #only reached if all checks are passed
+    valid.append(x)
+print(",".join(valid))
+```  
+# Qstn 19
+Question:
+You are required to write a program to sort the (name, age, height) tuples by ascending order where name is string, age and height are numbers. The tuples are input by console. The sort criteria is:
+1: Sort based on name;
+2: Then sort based on age;
+3: Then sort by score.
+The priority is that name > age > score.
+If the following tuples are given as input to the program:
+Tom,19,80
+John,20,90
+Jony,17,91
+Jony,17,93
+Json,21,85
+Then, the output of the program should be:
+[('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')]
+
+Hints:
+In case of input data being supplied to the question, it should be assumed to be a console input.
+We use itemgetter to enable multiple sort keys.
+``` 
+lst = []
+while True:
+    s = input().split(',')
+    if not s[0]:                         
+        break
+    lst.append(tuple(s))
+
+lst.sort(key= lambda x:(x[0],int(x[1]),int(x[2])))  
+print(lst)
+```  
+#Qstn 20  
+Question: Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
+
+```  
+def svndivisible(a):
+    x = 0
+    while x<n:
+        y=x
+        x=x+1
+        if y%7==0:
+            yield j
+
+for i in putNumbers(50):
+    print(i)
+```  
+# Qstn 21  
+Question
+A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. The trace of robot movement is shown as the following:
+UP 5
+DOWN 3
+LEFT 3
+RIGHT 2
+¡­
+The numbers after the direction are steps. Please write a program to compute the distance from current position after a sequence of movement and original point. If the distance is a float, then just print the nearest integer.
+Example:
+If the following tuples are given as input to the program:
+UP 5
+DOWN 3
+LEFT 3
+RIGHT 2
+Then, the output of the program should be:
+2
+
+Hints:
+In case of input data being supplied to the question, it should be assumed to be a console input.
+```  
+import math
+mvt = [0,0]
+while True:
+    x = input()
+    if not x:
+        break
+     # define distance as the input data separated be a space   
+    distance = x.split(" ")
+    # direction is whatevers on the first position in the input data
+    direction = distance[0]
+    # steps is what is in the second position of the input data and defined as an interger
+    steps = int(distance[1])
+    if direction=="UP":
+        mvt[0]+=steps
+    elif direction=="DOWN":
+        mvt[0]-=steps
+    elif direction=="LEFT":
+        mvt[1]-=steps
+    elif direction=="RIGHT":
+        mvt[1]+=steps
+    else:
+        pass
+
+print(int(round(math.sqrt(pos[1]**2+pos[0]**2))))
+```  
+# Qstn 22  
+Question:
+Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically. 
+Suppose the following input is supplied to the program:
+New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.
+Then, the output should be:
+2:2
+3.:1
+3?:1
+New:1
+Python:5
+Read:1
+and:1
+between:1
+choosing:1
+or:2
+to:1
+
+Hints
+In case of input data being supplied to the question, it should be assumed to be a console input.
+```  
+freq = {}
+sntce = input()    
+    for word in sntce.split():
+        freq[word] = freq.get(word, 0) + 1
+
+    words =freq.keys()
+    words.sort()
+
+    for w in words:
+        print(f'{w}:{freq[w]}')  
+        ```  
+# Qstn 23
+
+Question:
+Write a method which can calculate square value of number
+
+Hints:
+Using the ** operator
+
+```
+x = int(input())
+square = x**2
+print(square)
+```
+# Qstn 24  
+
+
+Question:
+
+Python has many built-in functions, and if you do not know how to use it, you can read document online or find some books. But Python has a built-in document function for every built-in functions.
+
+Please write a program to print some Python built-in functions documents, such as abs(), int(), raw_input()
+
+And add document for your own function
+Hints:
+The built-in document method is __doc__
+```
+print(abs.__doc__)
+print(int.__doc__)
+print(input.__doc__)
+
+
+def convert(num=input()):
+    '''It converts an interger into a string.
+    The input must be an interger'''
+print(str("num"), type("num"))
+print(convert.__doc__)
+convert()
+```
+
+### Question 25
+Level 1
+
+Question:
+Define a class, which have a class parameter and have a same instance parameter.
+
+Hints:
+Define a instance parameter, need add it in __init__ method
+You can init a object with construct parameter or set the value la
+```  
+class Country:
+    name= "Country"
+    
+    def __init__(self, name = None):
+        self.name = name
+    
+Kenya = Country("Kenya")
+print("%s name is %s" % (Country.name, Kenya.name))
+
+Tanzania = Country()
+Tanzania.name = "Tanzania"
+print("%s name is %s" % (Country.name, Tanzania.name))
+```  
+# Qstn 26
+Define a function which can compute the sum of two numbers.
+```  
+def add(a,b):
+    summation=a+b;
+    return summation
+x=int(input())
+y=int(input())
+print(add(x,y))
+```  
+# Qst 27  
+Define a function that can convert a integer into a string and print it in console.
+```  
+# covert interger into a string
+# defining the function
+
+def convert(num=input()):
+ print(str(num), type(num))
+
+convert()
+```  
+#Qstn 28
+Define a function that can convert a integer into a string and print it in console.
+```
+def convert(num=input()):
+ print(str(num), type(num))
+
+convert()
+```  
+# Qstn 29
+Define a function that can receive two integral numbers in string form and compute their sum and then print it in console.
+```
+def printinterger(num1,num2):
+    print(int(num1)+int(num2))
+    
+printinterger("3","4")
+```  
+#Qstn 30 
+Define a function that can accept two strings as input and concatenate them and then print it in console.
+```
+def printstring(x,y):
+    print(x+y)
+    
+printstring("Hello","World")
+```  
+# Qstn 31
+Define a function that can accept two strings as input and print the string with maximum length in console. If two strings have the same length, then the function should print al l strings line by line.
+
+```
+def stringlen(x,y):
+    
+    if len(x)>len(y):
+        print(x)
+    elif len(y)>len(x):
+        print(y)
+    else:
+        print(x)
+        print(y)
+        
+stringlen("cometh", "here")
+```  
+# Qstn 32
+Define a function that can accept an integer number as input and print the "It is an even number" if the number is even, otherwise print "It is an odd number".
+```
+def interpret(x=input()):
+    if x%2==0:
+        print("It is an even number")
+
+    if x%2!=0:
+        print("It is an odd number")
+        
+interpret(x)
+```
+
+# Qst 33  
+Define a function which can print a dictionary where the keys are numbers between 1 and 3 (both included) and the values are square of keys.  
+
+```  
+# dictionary where the keys are nubers and the values are their squares.
+# define the function
+def numbers():
+  num = dict()
+  for x in 1,2,3:
+    num[x]=x**2
+  print(num)
+
+numbers()  
+
+```  
+# Qstn 34
+Define a function which can print a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
+
+```
+def squareofkeys():
+	x=dict()
+	for i in range(1,21):
+		x[i]=i**2
+	print(x)
+
+squareofkeys()
+```  
+# Qstn 35
+Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the values only.
+
+```  
+def squareofkeys():
+	x=dict()
+	for i in range(1,21):
+		x[i]=i**2
+	for (a,b) in x.items():	
+		print(b)
+
+squareofkeys()
+```  
+# Qstn 36
+Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the keys only.
+```  
+def squareofkeys():
+	x=dict()
+	for i in range(1,21):
+		x[i]=i**2
+	for (a,b) in x.items():	
+		print(a)
+
+squareofkeys()
+```  
+# Qstn 37
+Define a function which can generate and print a list where the values are square of numbers between 1 and 20 (both included).
+```  
+def squares():
+	x=list()
+	for i in range(1,21):
+		x.append(i**2)
+	print(x)
+
+squares()
+```
+# Qstn 38 
+Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the first 5 elements in the list.
+```  
+def squares():
+	x=list()
+	for i in range(1,21):
+		x.append(i**2)
+	print(x[:5])
+
+squares()   
+```  
+
+# Qst 39  
+Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the last 5 elements in the list.
+```  
+def squares():
+	x=list()
+	for i in range(1,21):
+		x.append(i**2)
+	print(x[-5:])
+
+squares()  
+```  
+# Qstn 40
+Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print all values except the first 5 elements in the list.
+```  
+def squares():
+	x=list()
+	for i in range(1,21):
+		x.append(i**2)
+	print(x[5:])
+
+squares()
+```  
+#Qstn 41
+Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included). 
+```
+def squarestuple():
+	x=list()
+	for i in range(1,21):
+		x.append(i**2)
+	print(tuple(x))
+
+squarestuple()
+```  
+# Qstn 42  
+With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line. 
+```  
+x = (1,2,3,4,5,6,7,8,9)
+a = x[:5]
+b = x[-5:]
+print(a)
+print(b)  
+```  
+# Qstn 43
+Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10). 
+```  
+x = (1,2,3,4,5,6,7,8,9)
+y = list()
+for i in x:
+    if i%2==0:
+        y.append(i)
+    else:
+        pass
+x2 = tuple(y)
+print(x2)
+```  
+# Qstn 44  
+Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No".
+```  
+x= input()
+if x=="yes" or x=="YES" or x=="Yes":
+    print ("Yes")
+else:
+    print ("No")  
+    ```
+# Qstn 45
+Write a program which can filter even numbers in a list by using filter function. The list is: [1,2,3,4,5,6,7,8,9,10].
+```  
+x = [1,2,3,4,5,6,7,8,9,10]
+evens = filter(lambda a: a%2==0, x)
+print(list(evens))
+```  
+# Qstn 46
+Write a program which can map() to make a list whose elements are square of elements in [1,2,3,4,5,6,7,8,9,10]
+```  
+x = [1,2,3,4,5,6,7,8,9,10]
+squares = map(lambda a: a**2, x)
+print(list(squares))
+```
+# Qstn 47
+Write a program which can map() and filter() to make a list whose elements are square of even number in [1,2,3,4,5,6,7,8,9,10].
+```  
+x = [1,2,3,4,5,6,7,8,9,10]
+squares = map(lambda a: a**2, filter(lambda a: a%2==0, x))
+print(list(squares))
+```  
+# Qstn 48
+Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
+```  
+evens = filter(lambda x: x%2==0, range(1,21))
+print(list(evens))
+``` 
+# Qstn 49
+Write a program which can map() to make a list whose elements are square of numbers between 1 and 20 (both included).
+```  
+evens = map(lambda x: x**2, range(1,21))
+print(list(evens))
+```  
+# Qstn 50
+Define a class named American which has a static method called printNationality.
+```  
+class American(object):
+    @staticmethod
+    def printNationality():
+        print("America")
+
+anAmerican = American()
+anAmerican.printNationality()
+American.printNationality()
+```  
+# Qstn 51
+Define a class named American and its subclass NewYorker.
+```  
+class American():
+    pass
+
+class NewYorker(American):
+    pass
+
+american = American()
+newyorker = NewYorker()
+
+print(american)
+print(newyorker)
+```  
+# Qstn 52
+Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area.
+```  
+class Circle(object):
+    def __init__(self, r):
+        self.radius = r
+
+    def area(self):
+        return self.radius**2*3.14
+
+circle = Circle(2)
+print(circle.area())
+```  
+# Qstn 53  
+Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area.  
+```  
+class Rectangle(object):
+    def __init__(self, l, w):
+        self.length = l
+        self.width  = w
+
+    def area(self):
+        return self.length*self.width
+
+rectangle = Rectangle(2,10)
+print(rectangle.area())
+```  
+# Qstn 54  
+Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+```  
+class Shape(object):
+    def __init__(self):
+        pass
+
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self, l):
+        Shape.__init__(self)
+        self.length = l
+
+    def area(self):
+        return self.length*self.length
+
+square= Square(3)
+print(square.area())
+```  
+# Qstn 55  
+Please raise a RuntimeError exception.
+``` 
+raise RuntimeError('Error arose')
+```  
+# Qstn 56
+Write a function to compute 5/0 and use try/except to catch the exceptions.
+```  
+def throws():
+    return 5/0
+
+try:
+    throws()
+except ZeroDivisionError:
+    print("division by zero!")
+except Exceptionerr:
+    print('Caught an exception')
+finally:
+    print('In finally block for cleanup')
+```
+# Qstn 57
+Define a custom exception class which takes a string message as attribute.
+```  
+class Error(Exception):
+    """An exception class
+
+    Attributes:
+        msg  -- explanation of the error
+    """
+    
+    def __init__(self, msg):
+        self.msg = msg
+
+error = Error("Error occurred")
+print(error)
+```
+# Qstn 58
+Assuming that we have some email addresses in the "username@companyname.com" format, please write program to print the user name of a given email address. Both user names and company names are composed of letters only.
+```  
+import re
+email = input()
+sect2 = "(\w)@((\w+\.)+(com))"
+x1=re.match(sect2,email)
+print(x1.group(1))
+```
+# Qstn 59
+Assuming that we have some email addresses in the "username@companyname.com" format, please write program to print the company name of a given email address. Both user names and company names are composed of letters only.
+```  
+import re
+email = input()
+sect2 = "(\w)@(\w+)\.(com)"
+a1 = re.match(sect2,email)
+print(a1.group(2))
+```  
+# Qstn 60
+Write a program which accepts a sequence of words separated by whitespace as input to print the words composed of digits only.
+```  
+import re
+x = input()
+print(re.findall("\d+",x))
+```
+# Qstn 61
+Print a unicode string "hello world".
+```  
+universal = u"Hello World!"
+print(universal)
+```
+# Qstn 62
+Write a program to read an ASCII string and to convert it to a unicode string encoded by utf-8.
+```  
+x= input()
+y = x.encode('utf-8') 
+print(y)
+```
+# Qstn 63
+Write a special comment to indicate a Python source code file is in unicode.
+```  
+# -*- coding: utf-8 -*-
+```  
+# Qstn 64
+Write a program to compute 1/2+2/3+3/4+...+n/n+1 with a given n input by console (n>0).
+```  
+x=int(input())
+sum=0.0
+for i in range(1,x+1):
+    sum += float(float(i)/(i+1))
+print(sum)
+```  
+# Qstn 65
+Write a program to compute:
+
+f(n)=f(n-1)+100 when n>0
+and f(0)=1
+
+with a given n input by console (n>0).
+```  
+n = int(input())
+f = lambda x: f(x-1)+100 if x > 0 else 0
+print(f(n)
+```  
+# Qstn 66  
+The Fibonacci Sequence is computed based on the following formula:
+
+f(n)=0 if n=0
+f(n)=1 if n=1
+f(n)=f(n-1)+f(n-2) if n>1
+
+Please write a program to compute the value of f(n) with a given n input by console.
+```  
+def f(n):
+    if n < 2:
+        return n
+    return f(n-1) + f(n-2)
+
+n = int(input())
+print(f(n))
+```
+# Qstn 67
+The Fibonacci Sequence is computed based on the following formula:
+
+f(n)=0 if n=0
+f(n)=1 if n=1
+f(n)=f(n-1)+f(n-2) if n>1
+
+Please write a program using list comprehension to print the Fibonacci Sequence in comma separated form with a given n input by console.
+```  
+def f(n):
+    if n < 2:
+        fibo[n] = n
+        return fibo[n]
+    fibo[n] = f(n-1) + f(n-2)
+    return fibo[n]
+
+n = int(input())
+fibo = [0]*(n+1)  
+f(n)              
+fibo = [str(i) for i in fibo] 
+ans = ",".join(fibo)    
+print(ans)
+
+```
+# Qstn 68
+Please write a program using generator to print the even numbers between 0 and n in comma separated form while n is input by console.
+```  
+n = int(input())
+lst = []
+for x in range(0,n+1):
+    if x%2==0:
+        lst.append(x)
+        print(x, end = ",")
+    else:
+        pass
+```
+# Qstn 69
+Please write a program using generator to print the numbers which can be divisible by 5 and 7 between 0 and n in comma separated form while n is input by console.
+```  
+def generate(n):
+    for i in range(n+1):
+        if i%7==0 and i%5==0:  
+            yield i
+
+n = int(input())
+res = [str(i) for i in generate(n)]
+print(",".join(res))
+
+```  
+# Qstn 70
+Please write assert statements to verify that every number in the list [2,4,6,8] is even.
+```  
+x = [2,4,6,8]
+for i in x:
+    assert i%2==0
+```  
+# Qstn 71
+Please write a program which accepts basic mathematic expression from console and print the evaluation result.
+```  
+qstn = input()
+answ = eval(qstn)
+print(answ)
+```  
+# Qstn 72
+Please write a binary search function which searches an item in a sorted list. The function should return the index of element to be searched in the list.
+```  
+def binary_search(lst, item):
+    low = 0
+    high = len(lst) - 1
+    
+    while low <= high:
+        mid = round((low + high) / 2)
+        
+        if lst[mid] == item:
+            return mid
+        elif lst[mid] > item:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return None
+    
+lst = [1,3,5,7,]
+print(binary_search(lst, 9))   
+```
+# Qstn 73
+Please write a binary search function which searches an item in a sorted list. The function should return the index of element to be searched in the list.
+```  
+def binary_search(lst, item):
+    low = 0
+    high = len(lst) - 1
+    
+    while low <= high:
+        mid = round((low + high) / 2)
+        
+        if lst[mid] == item:
+            return mid
+        elif lst[mid] > item:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return None
+    
+lst = [1,3,5,7,]
+print(binary_search(lst, 9))   
+
+```
+# Qstn 74  
+Please generate a random float where the value is between 10 and 100 using Python math module.
+```  
+import random
+random_num = random.uniform(10,100)
+print(random_num)
+```  
+# Qstn 75
+Please generate a random float where the value is between 5 and 95 using Python math module.
+```  
+import random
+random_num = random.uniform(5,95)
+print(random_num)
+```  
+# Qstn 76
+Please write a program to output a random even number between 0 and 10 inclusive using random module and list comprehension.
+```  
+import random
+x = [i for i in range(0,11) if i%2==0]
+print(random.choice(x))
+``` 
+# Qstn 77
+Please write a program to output a random number, which is divisible by 5 and 7, between 0 and 10 inclusive using random module and list comprehension.
+```  
+import random
+x = [i for i in range(0,11) if i%7==0 and i%5==0]
+print(random.choice(x))
+``` 
+# Qstn 78  
+Please write a program to generate a list with 5 random numbers between 100 and 200 inclusive.
+```  
+import random
+print(random.sample(range(100, 200), 5))
+```  
+# Qstn 79
+Please write a program to randomly generate a list with 5 even numbers between 100 and 200 inclusive
+```  
+import random
+print(random.sample([i for i in range(100, 200) if i %2==0], 5))
+
+```
+# Qstn 80
+Please write a program to randomly generate a list with 5 numbers, which are divisible by 5 and 7 , between 1 and 1000 inclusive.
+```  
+import random
+print(random.sample([i for i in range(0, 1001) if i %5==0 and i%7==0], 5))
+```  
+# Qstn 81  
+Please write a program to randomly print a integer number between 7 and 15 inclusive.
+```  
+import random
+x = random.randrange(7,16)
+print(x)
+
+```
+# Qstn 82  
+Please write a program to compress and decompress the string "hello world!hello world!hello world!hello world!".
+```  
+s = 'hello world!hello world!hello world!hello world!'
+y = bytes(s, 'utf-8')
+x = zlib.compress(y)
+print(x)
+print(zlib.decompress(x))
+```  
+# Qstn 83  
+Please write a program to print the running time of execution of "1+1" for 100 times.
+```  
+from timeit import Timer
+x = Timer("for i in range(100):1+1")
+print (x.timeit())
+```
+# Qstn 84
+Please write a program to shuffle and print the list [3,6,7,8].
+```  
+import random
+
+x = [3,6,7,8]
+random.shuffle(x)
+print(x)
+```  
+# Qstn 85 
+Please write a program to shuffle and print the list [3,6,7,8].
+```  
+import random
+
+x = [3,6,7,8]
+random.shuffle(x)
+print(x)
+```
+# Qstn 86
+Please write a program to generate all sentences where subject is in ["I", "You"] and verb is in ["Play", "Love"] and the object is in ["Hockey","Football"].
+```  
+subjects=["I", "You"]
+verbs=["Play", "Love"]
+objects=["Hockey","Football"]
+
+for subj in subjects:
+    for verb in verbs:
+        for obj in objects:
+            print("{} {} {}".format(sub,verb,obj))
+```  
+# Qstn 87
+Please write a program to print the list after removing delete even numbers in [5,6,77,45,22,12,24].
+```  
+def notEven(n):
+    return n%2!=0
+
+x = [5,6,77,45,22,12,24]
+y = list(filter(notEven,x))
+print(y)
+```
+# Qstn 88  
+By using list comprehension, please write a program to print the list after removing delete numbers which are divisible by 5 and 7 in [12,24,35,70,88,120,155]
+```
+def svn_fve(n):
+    return n%7==0 and n%5==0
+    
+x = [12,24,35,70,88,120,155]
+y = list(filter(svn_fve,x))
+print(y)
+```
+# Qstn 89  
+By using list comprehension, please write a program to print the list after removing the 0th, 2nd, 4th,6th numbers in [12,24,35,70,88,120,155].
+```  
+li = [12,24,35,70,88,120,155]
+li = [li[i] for i in range(len(li)) if i%2 != 0 and i <= 6]
+print(li)
+```
+# Qstn 90  
+By using list comprehension, please write a program generate a 3*5*8 3D array whose each element is 0.
+```  
+arrays = [[ [0 for col in range(8)] for col in range(5)] for row in range(3)]
+print (arrays)
+```
+# Qstn 91  
+By using list comprehension, please write a program to print the list after removing the 0th,4th,5th numbers in [12,24,35,70,88,120,155].   
+```  
+x = [12, 24, 35, 70, 88, 120, 155]
+print(list(j for i, j in enumerate(x) if i != 0 and i != 4 and i != 5))
+
+```  
+# Qstn 92  
+By using list comprehension, please write a program to print the list after removing the value 24 in [12,24,35,24,88,120,155].
+```  
+x = [12, 24, 35, 70, 88, 120, 155]
+print(list(i for i in x if i!=24))
+```   
+# Qstn 93
+With two given lists [1,3,6,78,35,55] and [12,24,35,24,88,120,155], write a program to make a list whose elements are intersection of the above given lists.
+```  
+x = [1,3,6,78,35,55]
+y = [12,24,35,24,88,120,155]
+set1= set(x)
+set2= set(y)
+intersection = set.intersection(set1,set2)
+print(list(intersection))
+```  
+# Qstn 94
+With a given list [12,24,35,24,88,120,155,88,120,155], write a program to print this list after removing all duplicate values with original order reserved.
+```  
+li = [12,24,35,24,88,120,155,88,120,155]
+for i in li:
+    if li.count(i) > 1:
+        li.remove(i)
+print(li)
+```  
+# Qstn 95
+Define a class Person and its two child classes: Male and Female. All classes have a method "getGender" which can print "Male" for Male class and "Female" for Female class.
+```  
+class Person(object):
+    def getGender( self ):
+        return "Unknown"
+
+class Male( Person ):
+    def getGender( self ):
+        return "Male"
+
+class Female( Person ):
+    def getGender( self ):
+        return "Female"
+
+John = Male()
+Anne= Female()
+print(John.getGender())
+print(Anne.getGender())
+```  
+# Qstn 96
+Please write a program which count and print the numbers of each character in a string input by console.
+``` 
+
+import string
+s = input()
+for letter in string.ascii_lowercase:
+    cnt = s.count(letter)
+    if cnt > 0:
+        print("{},{}".format(letter,cnt))
+``` 
+# Qstn 97
+Please write a program which accepts a string from console and print it in reverse order.
+```
+x = input()
+y = ''.join(reversed(x))
+print(y)
+```
+# Qstn 98
+Please write a program which accepts a string from console and print the characters that have even indexes
+``` 
+x=input()
+y = x[::2]
+print(y)
+```
+# Qstn 99
+Please write a program which prints all permutations of [1,2,3]
+```  
+import itertools
+print (list(itertools.permutations([1,2,3])))
+```  
+# Qstn 100  
+Write a program to solve a classic ancient Chinese puzzle: 
+We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have?  
+```  
+def chinese(numheads,numlegs):
+    ns='No solutions!'
+    for i in range(numheads+1):
+        j=numheads-i
+        if 2*i+4*j==numlegs:
+            return i,j
+    return ns,ns
+
+numheads=35
+numlegs=94
+solutions=solve(numheads,numlegs)
+print(solutions)
+```  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
