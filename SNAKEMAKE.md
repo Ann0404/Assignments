@@ -55,5 +55,5 @@ When running the workflow, only the output file is defined in the command i.e ; 
 Snakemake is able to reason back from the required output.  
 
 ### DAG  
-Snakemake also allows for the visualization of the DAG provided the right tools for visualization such as Graphviz have been installed.
+Snakemake also allows for the visualization of the DAG provided the right tools for visualization such as [Graphviz](https://graphviz.org/) have been installed.
 
