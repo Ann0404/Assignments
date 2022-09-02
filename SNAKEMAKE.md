@@ -2,6 +2,8 @@
 Snakemake is a workflow engine that utilises Python based language to define the processes. It offers a powerful working environment that ranges from  from single-core workstations to compute clusters without changing the process.  
 It allows the scripts to be more transferrable and neat.  
 
+Snakemake can be installed using conda. It can be used with python version 3.3 and above
+
 ## Basics of Snakemake  
 A snakemake workflow has four main components:
 * Rule  
