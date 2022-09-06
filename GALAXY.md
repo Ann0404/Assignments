@@ -31,6 +31,6 @@ The three main steps in analysis on galaxy are:
      Workflows can be imported from the shared data in the galaxy platform . They can also be imported from the web by pasting the URL in the import          section.  
      
    * Manual creation of workflows.  
-     Galaxy provides the option of manually creating a workflow. It even provides a graphical representation of the workflows. These workflows can then be exported or published . Here is a workflow I have created for the identification of AMR genes in waste water collected from Kenya by Rene S.Hendriksen *et al* for their paper on [**Global monitoring of antimicrobial resistance based on metagenomics analyses of urban sewage**](https://www.nature.com/articles/s41467-019-08853-3).
-[The pictorial representation](https://usegalaxy.org/workflow/gen_image?id=4bbeefad1fa741ed)    
-[The workflow](https://usegalaxy.org/u/ann_cheptoo/w/first-workflow/json-download)  
+     Galaxy provides the option of manually creating a workflow. It even provides a graphical representation of the workflows. These workflows can then be exported or published . Here is a workflow I have created for the identification of AMR genes in waste water collected from Kenya by Rene S.Hendriksen *et al* for their paper on [**Global monitoring of antimicrobial resistance based on metagenomics analyses of urban sewage**](https://www.nature.com/articles/s41467-019-08853-3).  
+* [The pictorial representation](https://usegalaxy.org/workflow/gen_image?id=4bbeefad1fa741ed)    
+* [The workflow](https://usegalaxy.org/u/ann_cheptoo/w/first-workflow/json-download)  
